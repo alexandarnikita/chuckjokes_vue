@@ -2,8 +2,10 @@
 // import { $utils } from '@helper'
 
 export default {
-  $vuexSetUserInfo (state, info) {
-    state.userId = info._id
-    state.userInfo = info
+  $vuexSetCategories (state, value) {
+    state.categories = value
+  },
+  $vuexSetJokes (state, value) {
+    state.jokes = value
   }
 }

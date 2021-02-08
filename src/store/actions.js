@@ -1,9 +1,12 @@
-import { $apis } from '@helper'
+import JokeApis from '../helper/apis/joke'
 
 export default {
-  async $getUserInfo ({commit, state}) {
-    if (!state.userId) return
-    let res = await $apis.getProfile({_id: state.userId})
-    commit('$vuexSetUserInfo', res.value)
+  async $getCategories ({commit}) {
+    let res = await JokeApis.getCategories()
+    commit('$vuexSetCategories', res)
+  },
+  async $getJokes ({commit}, query) {
+    let res = await JokeApis.getJokes(query)
+    commit('$vuexSetJokes', res.results)
   }
 }

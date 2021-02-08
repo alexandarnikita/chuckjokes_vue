@@ -8,7 +8,10 @@ import createLogger from 'vuex/dist/logger'
 Vue.use(Vuex)
 
 const state = {
-  userInfo: null
+  userInfo: null,
+  categories: ['a', 'b'],
+  jokes: [],
+  selectedCategory: ''
 }
 
 const debug = process.env.NODE_ENV !== 'production'
