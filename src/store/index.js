@@ -11,7 +11,8 @@ const state = {
   userInfo: null,
   categories: ['a', 'b'],
   jokes: [],
-  selectedCategory: ''
+  selectedCategory: '',
+  colors: ['#ff5b5b', '#ff915b', '#ffbe5b', '#ffdf5b', '#8fe360', '#57e690', '#57dbe6']
 }
 
 const debug = process.env.NODE_ENV !== 'production'
