@@ -85,6 +85,16 @@
       padding: 0 8px;
       margin-bottom: 38px;
     }
+
+    .no-jokes {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      p {
+        color: $light-dark;
+      }
+    }
   }
 
   .joke-card {

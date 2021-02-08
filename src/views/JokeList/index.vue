@@ -61,6 +61,9 @@
             </router-link>
           </div>
         </div>
+        <div v-if="$store.getters.$getShowingJokes.length === 0" class="no-jokes">
+          <p>No Jokes</p>
+        </div>
       </div>
     </div>
   </div>
