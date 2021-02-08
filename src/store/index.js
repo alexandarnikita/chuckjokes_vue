@@ -15,6 +15,11 @@ const state = {
     name: 'View All',
     color: '#FFFFFF'
   },
+  pagination: {
+    currentPageIndex: 1,
+    perPage: 6
+  },
+  filteredJokes: [],
   colors: ['#ff5b5b', '#ff915b', '#ffbe5b', '#ffdf5b', '#8fe360', '#57e690', '#57dbe6']
 }
 

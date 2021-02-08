@@ -43,6 +43,25 @@
       >
         {{ $store.state.selectedCategory.name }}
       </span>
+      <div class="row">
+        <div
+          v-for="joke in $store.getters.$getShowingJokes"
+          class="col-md-4"
+          :key="joke.id"
+        >
+          <div class="joke-card">
+            <p class="card-title">
+              <img src='../../assets/images/green-light.png' alt="Card Icon" class="card-icon" />
+              Joke
+            </p>
+            <p class="joke-text">{{ joke.value }}</p>
+            <router-link :to="'/joke/' + joke.id" class="see-stats">
+              See Stats
+              <img src='../../assets/images/arrow-right.png' alt="Stats Icon" class="stats-icon" />
+            </router-link>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
