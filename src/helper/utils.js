@@ -1,4 +1,5 @@
 import Vue from 'vue'
+const baseURL = process.env.BASE_SERVER_URL || 'https://api.chucknorris.io/jokes'
 
 if (typeof String.prototype.startsWith !== 'function') {
   Window.String.prototype.startsWith = function (prefix) {
@@ -21,7 +22,7 @@ export default {
   },
 
   serverUrl (apiName) {
-    return `app/${apiName}`
+    return baseURL + apiName
   },
 
   titleLang (zhStr, enStr) {

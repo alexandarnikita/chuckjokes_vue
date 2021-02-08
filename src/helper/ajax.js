@@ -12,11 +12,7 @@ function requestHandle (params) {
       if (res.type === 'application/x-msdownload') {
         redirectToIframe(res.request.responseURL)
       } else if (res.data) {
-        if (res.data.success) {
-          defer.resolve(res.data.value)
-        } else {
-          defer.reject(res.data.message)
-        }
+        defer.resolve(res.data)
       } else {
         defer.reject()
       }
