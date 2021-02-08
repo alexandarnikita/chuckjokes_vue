@@ -10,5 +10,8 @@ export default {
   },
   $vuexSetSelectedCategory (state, value) {
     state.selectedCategory = value
+  },
+  $vueSetFilteredJokes (state, value) {
+    state.filteredJokes = value
   }
 }

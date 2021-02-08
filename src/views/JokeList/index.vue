@@ -32,7 +32,7 @@
           :style="{backgroundColor: ALL_CATEGORIES.color}"
           @click="handleSelectCategory(ALL_CATEGORIES)"
         >
-          {{ ALL_CATEGORIES.name }}
+          View All
         </button>
       </div>
     </div>
@@ -50,12 +50,12 @@
 <script>
 
 const UN_CATEGORIZED = {
-  name: 'Uncategorized',
+  name: 'uncategorized',
   color: '#6c757d'
 }
 
 const ALL_CATEGORIES = {
-  name: 'View All',
+  name: 'all',
   color: '#d1bb91'
 }
 
@@ -64,9 +64,10 @@ export default {
   components: { },
   props: {},
   computed: {},
-  mounted () {
-    this.$getCategories()
-    this.$getJokes({query: 'all'})
+  async mounted () {
+    await this.$getCategories()
+    await this.$getJokes({query: 'all'})
+    this.$setSelectedCategory(ALL_CATEGORIES)
   },
   methods: {
     handleSelectCategory(category) {
