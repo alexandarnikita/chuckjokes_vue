@@ -2,15 +2,25 @@
 export default [
   {
     path: '/',
-    redirect: '/hello'
+    redirect: '/home'
   },
   {
-    path: '/hello',
+    path: '/home',
     meta: {
-      title: 'Hello',
+      title: 'Home',
       ignoreAuth: true
     },
-    component: () => import('../containers/HomeContainer.vue')
+    component: () => import('../containers/HomeContainer.vue'),
+    children: [
+      {
+        path: '/',
+        meta: {
+          title: 'JokeList',
+          ignoreAuth: true
+        },
+        component: () => import('../views/JokeList/index.vue')
+      }
+    ]
   }
 ]
 

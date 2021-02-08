@@ -93,21 +93,45 @@
         @click=collapseSidebar(false) />
     </div>
     <div class="page-banner">
-      <h1>The Joke Bible</h1>
-      <p class="banner-lead">Daily Laughs for you and yours</p>
-      <div class="banner-search">
-        <div class="search-bar">
-          <input
-            type="text"
-            class="search-input"
-            placeholder="How can we make you laugh today?"
-            v-model="searchKeyWord"
-            @change="setSearchKeyword"
-          />
-          <img src="../../assets/images/search-white.png" alt="Search" class="search-icon" />
-        </div>
+    <h1>The Joke Bible</h1>
+    <p class="banner-lead">Daily Laughs for you and yours</p>
+    <div class="banner-search">
+      <div class="search-bar">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="How can we make you laugh today?"
+          v-model="searchKeyWord"
+          @change="setSearchKeyword"
+        />
+        <img src="../../assets/images/search-white.png" alt="Search" class="search-icon" />
+      </div>
+      <div class="search-result" :class="jokes.length > 0 ? 'show' : ''">
+<!--        {jokes.map((joke) => (-->
+<!--        joke.categories.length > 0-->
+<!--        ? (-->
+<!--        <Link-->
+<!--          to={`/joke/${joke.id}`}-->
+<!--          key={joke.id}-->
+<!--          class="list-item"-->
+<!--          onClick={clearSearch}-->
+<!--        >-->
+<!--          {`${joke.categories.join(', ')} Jokes: Joke Title`}-->
+<!--        </Link>-->
+<!--        ) : (-->
+<!--        <Link-->
+<!--          to={`/joke/${joke.id}`}-->
+<!--          key={joke.id}-->
+<!--          class="list-item"-->
+<!--          onClick={clearSearch}-->
+<!--        >-->
+<!--          {`UnCategorized Jokes: Joke Title`}-->
+<!--        </Link>-->
+<!--        )-->
+<!--        ))}-->
       </div>
     </div>
+  </div>
   </div>
 </template>
 
