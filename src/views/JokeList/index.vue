@@ -37,7 +37,12 @@
       </div>
     </div>
     <div class="joke-list">
-
+      <span
+        class="filter-badge"
+        :style="{ backgroundColor: $store.state.selectedCategory.color }"
+      >
+        {{ $store.state.selectedCategory.name }}
+      </span>
     </div>
   </div>
 </template>
