@@ -7,5 +7,8 @@ export default {
   },
   $vuexSetJokes (state, value) {
     state.jokes = value
+  },
+  $vuexSetSelectedCategory (state, value) {
+    state.selectedCategory = value
   }
 }

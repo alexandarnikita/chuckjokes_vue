@@ -16,5 +16,8 @@ export default {
   async $getJokes ({commit}, query) {
     let res = await JokeApis.getJokes(query)
     commit('$vuexSetJokes', res.results)
+  },
+  $setSelectedCategory ({commit, state}, category) {
+    commit('$vuexSetSelectedCategory', category)
   }
 }

@@ -20,7 +20,8 @@ Vue.mixin({
   methods: {
     ...mapActions([
       '$getCategories',
-      '$getJokes'
+      '$getJokes',
+      '$setSelectedCategory'
     ])
   }
 })
