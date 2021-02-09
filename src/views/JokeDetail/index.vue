@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="row joke-detail" v-if="joke">
-      <div class="col-md-8 d-flex flex-column justify-content-between">
+      <div class="col-8 d-flex flex-column justify-content-between">
         <div class="joke-detail-card">
           <div class="joke-header justify-content-between">
             <p v-if="!joke.categories || joke.categories.length === 0" class="badge uncategorized-badge">• Un_Categorized</p>
@@ -70,7 +70,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-4">
         <div class="top-jokes">
           <h3>The Top 10 Jokes This Week</h3>
           <router-link

@@ -86,6 +86,16 @@
       margin-bottom: 38px;
     }
 
+    .joke-col {
+      width: 100%;
+      padding: 0 8px;
+      margin-bottom: 38px;
+
+      @media (min-width: 768px) {
+        width: 33.333%;
+      }
+    }
+
     .no-jokes {
       width: 100%;
       display: flex;

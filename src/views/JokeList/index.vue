@@ -46,7 +46,7 @@
       <div class="row">
         <div
           v-for="joke in $store.getters.$getShowingJokes"
-          class="col-md-4"
+          class="joke-col"
           :key="joke.id"
         >
           <div class="joke-card">
