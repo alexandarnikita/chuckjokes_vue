@@ -21,7 +21,8 @@ Vue.mixin({
     ...mapActions([
       '$getCategories',
       '$getJokes',
-      '$setSelectedCategory'
+      '$setSelectedCategory',
+      '$showNextPage'
     ])
   }
 })

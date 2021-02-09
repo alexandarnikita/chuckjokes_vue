@@ -65,6 +65,19 @@
           <p>No Jokes</p>
         </div>
       </div>
+      <div
+        class="d-flex justify-content-center"
+        v-if="$store.getters.$getShowingJokes.length > 0"
+      >
+        <button
+          class="view-more"
+          :disabled="$store.getters.$getShowingJokes.length >= $store.state.filteredJokes.length"
+          @click="onClickViewMoreBtn"
+        >
+          View More
+          <img src='../../assets/images/arrow-right.png' class="view-all-icon" alt="View More" />
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -94,6 +107,9 @@ export default {
   methods: {
     handleSelectCategory(category) {
       this.$setSelectedCategory(category)
+    },
+    onClickViewMoreBtn() {
+      this.$showNextPage()
     }
   },
   data () {

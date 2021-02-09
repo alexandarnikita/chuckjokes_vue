@@ -32,5 +32,8 @@ export default {
       )
     }
     commit('$vueSetFilteredJokes', filteredJokes)
+  },
+  $showNextPage({commit, state}) {
+    commit('$vuexShowNextPage', state.pagination.currentPageIndex + 1)
   }
 }
