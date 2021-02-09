@@ -10,7 +10,7 @@ export default [
       title: 'Home',
       ignoreAuth: true
     },
-    component: () => import('../containers/HomeContainer.vue'),
+    component: () => import('../containers/HomeContainer'),
     children: [
       {
         path: '/',
@@ -18,7 +18,15 @@ export default [
           title: 'JokeList',
           ignoreAuth: true
         },
-        component: () => import('../views/JokeList/index.vue')
+        component: () => import('../views/JokeList')
+      },
+      {
+        path: '/joke/:id',
+        meta: {
+          title: 'JokeDetail',
+          ignoreAuth: true
+        },
+        component: () => import('../views/JokeDetail')
       }
     ]
   }

@@ -1,0 +1,17 @@
+@import "variables";
+
+.back-button {
+  width: 62px;
+  height: 61px;
+  background: $dark;
+  border: none;
+  outline: none;
+  margin-top: 46px;
+  margin-bottom: 48px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 52px 82px 113px 53px;
+  cursor: pointer;
+}
+
