@@ -296,6 +296,7 @@
       border: solid 1px $white-two;
       background: transparent;
       outline: none !important;
+      color: white;
 
       @media (min-width: 500px) {
         width: 458px;
@@ -315,6 +316,7 @@
 
       &:focus {
         background-color: $white-two;
+        color: black;
 
         ~.search-icon {
           filter: invert(1);
@@ -340,6 +342,10 @@
       padding: 5px 16px;
       display: none;
       z-index: 10;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       &.show {
         display: flex;
@@ -371,6 +377,10 @@
         margin: 0;
         border-bottom: solid 1px #d1d1d1;
         text-decoration: none;
+
+        p {
+          margin: 0;
+        }
 
         &:last-child {
           border-bottom: unset;

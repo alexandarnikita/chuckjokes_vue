@@ -102,33 +102,20 @@
           class="search-input"
           placeholder="How can we make you laugh today?"
           v-model="searchKeyWord"
-          @change="setSearchKeyword"
+          @keyup="setSearchKeyword"
         />
         <img src="../../assets/images/search-white.png" alt="Search" class="search-icon" />
       </div>
-      <div class="search-result" :class="jokes.length > 0 ? 'show' : ''">
-<!--        {jokes.map((joke) => (-->
-<!--        joke.categories.length > 0-->
-<!--        ? (-->
-<!--        <Link-->
-<!--          to={`/joke/${joke.id}`}-->
-<!--          key={joke.id}-->
-<!--          class="list-item"-->
-<!--          onClick={clearSearch}-->
-<!--        >-->
-<!--          {`${joke.categories.join(', ')} Jokes: Joke Title`}-->
-<!--        </Link>-->
-<!--        ) : (-->
-<!--        <Link-->
-<!--          to={`/joke/${joke.id}`}-->
-<!--          key={joke.id}-->
-<!--          class="list-item"-->
-<!--          onClick={clearSearch}-->
-<!--        >-->
-<!--          {`UnCategorized Jokes: Joke Title`}-->
-<!--        </Link>-->
-<!--        )-->
-<!--        ))}-->
+      <div class="search-result" :class="searchResult.length > 0 ? 'show' : ''">
+        <div
+          v-for="joke in searchResult"
+          :key="joke.id"
+          class="list-item"
+          @click="showJokeDetailPage(joke.id)"
+        >
+          <p v-if="joke.categories.length > 0">{{ joke.categories.join(', ') }} Jokes: Joke Title</p>
+          <p v-else>UnCategorized Jokes: Joke Title</p>
+        </div>
       </div>
     </div>
   </div>
@@ -173,6 +160,31 @@
       },
       setSearchKeyword (e) {
         this.searchKeyWord = e.target.value
+        this.getSearchResult(e.target.value)
+      },
+      getSearchResult(keyword) {
+        if (keyword === '') {
+          this.searchResult = []
+          return
+        }
+        const jokes = this.$store.state.jokes
+
+        const searchKey = keyword.toLowerCase()
+        const result = jokes.filter(joke =>
+          joke.value.toLowerCase().indexOf(searchKey) !== -1
+        )
+
+        this.searchResult = result
+        if (result.length === 1) {
+          window.setTimeout(() => {
+            this.showJokeDetailPage(result[0].id)
+          }, 1000)
+        }
+      },
+      showJokeDetailPage(jokeId) {
+        this.$router.push(`/joke/${jokeId}`)
+        this.searchKeyWord = ''
+        this.searchResult = []
       }
     },
     data () {
@@ -181,7 +193,7 @@
         toggleSidebar: false,
         searchKeyWord: '',
         navItems,
-        jokes: []
+        searchResult: []
       }
     }
   }
