@@ -10,7 +10,7 @@
         </button>
       </div>
     </div>
-    <div class="row joke-detail">
+    <div class="row joke-detail" v-if="joke">
       <div class="col-md-8 d-flex flex-column justify-content-between">
         <div class="joke-detail-card">
           <div class="joke-header justify-content-between">

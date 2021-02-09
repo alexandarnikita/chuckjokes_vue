@@ -8,8 +8,8 @@
 export default {
   name: 'App',
   async mounted () {
-    await this.$getCategories()
     await this.$getJokes({query: 'all'})
+    await this.$getCategories()
     this.$setSelectedCategory({
       name: 'all',
       color: '#d1bb91'
