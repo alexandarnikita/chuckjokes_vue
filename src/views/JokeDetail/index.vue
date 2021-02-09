@@ -36,6 +36,22 @@
             <p class="description">{{ joke.value }}</p>
           </div>
         </div>
+        <div class="option-content">
+          <div class="like-group">
+            <div class="like counter">
+              <div class="circle">
+                <img src='../../assets/images/like.png' alt="Like" class="hand-icon" />
+              </div>
+              <span>65</span>
+            </div>
+            <div class="dislike counter">
+              <div class="circle">
+                <img src='../../assets/images/dislike.png' alt="Dislike" class="hand-icon" />
+              </div>
+              <span>65</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-md-4">
