@@ -249,6 +249,16 @@
   background-size: cover;
   background-position: center;
 
+  @media (max-width: 568px) {
+    h1 {
+      font-size: 36px !important;
+    }
+
+    .banner-lead {
+      font-size: 18px !important;
+    }
+  }
+
   h1 {
     font-family: $montserrat;
     font-size: 48px;
