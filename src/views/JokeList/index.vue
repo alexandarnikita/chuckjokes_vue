@@ -103,10 +103,12 @@ export default {
   },
   methods: {
     handleSelectCategory(category) {
-      this.$setSelectedCategory(category)
+      if (this.$store.state.selectedCategory.name !== category.name) {
+        this.$setSelectedCategory(category)
+      }
     },
     onClickViewMoreBtn() {
-      this.$showNextPage()
+      this.$showMoreJokes()
     }
   },
   data () {

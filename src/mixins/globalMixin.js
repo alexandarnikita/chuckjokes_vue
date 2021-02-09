@@ -22,7 +22,7 @@ Vue.mixin({
       '$getCategories',
       '$getJokes',
       '$setSelectedCategory',
-      '$showNextPage'
+      '$showMoreJokes'
     ])
   }
 })

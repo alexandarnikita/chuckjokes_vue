@@ -14,7 +14,10 @@ export default {
   $vueSetFilteredJokes (state, value) {
     state.filteredJokes = value
   },
-  $vuexShowNextPage (state, value) {
+  $vuexShowMoreJokes (state, value) {
     state.pagination.currentPageIndex = value
+  },
+  $vuexResetPagination(state) {
+    state.pagination.currentPageIndex = 1
   }
 }
