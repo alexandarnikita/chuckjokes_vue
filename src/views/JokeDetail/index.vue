@@ -14,7 +14,7 @@
       <div class="col-md-8 d-flex flex-column justify-content-between">
         <div class="joke-detail-card">
           <div class="joke-header justify-content-between">
-            <p v-if="!joke.categories || joke.categories.length === 0" class="badge uncategorized-badge">Un_Categorized</p>
+            <p v-if="!joke.categories || joke.categories.length === 0" class="badge uncategorized-badge">• Un_Categorized</p>
             <p
               v-for="category in joke.categories"
               class="badge"
@@ -31,6 +31,7 @@
           <div class="card-content">
             <div class="title-content d-flex justify-content-between">
               <p class="title">Joke Title</p>
+              <div class="title-divider"/>
               <p class="number">NO #1</p>
             </div>
             <p class="description">{{ joke.value }}</p>
@@ -42,13 +43,13 @@
               <div class="circle">
                 <img src='../../assets/images/like.png' alt="Like" class="hand-icon" />
               </div>
-              <span>65</span>
+              <span>100</span>
             </div>
             <div class="dislike counter">
               <div class="circle">
                 <img src='../../assets/images/dislike.png' alt="Dislike" class="hand-icon" />
               </div>
-              <span>65</span>
+              <span>100</span>
             </div>
           </div>
           <div class="pagination-group">
