@@ -10,6 +10,10 @@ export default {
   async mounted () {
     await this.$getCategories()
     await this.$getJokes({query: 'all'})
+    this.$setSelectedCategory({
+      name: 'all',
+      color: '#d1bb91'
+    })
   },
   created () {
   }

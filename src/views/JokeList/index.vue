@@ -99,8 +99,7 @@ export default {
   components: { },
   props: {},
   computed: {},
-  async mounted () {
-    this.$setSelectedCategory(ALL_CATEGORIES)
+  mounted () {
   },
   methods: {
     handleSelectCategory(category) {
