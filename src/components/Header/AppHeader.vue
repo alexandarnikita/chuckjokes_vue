@@ -107,15 +107,19 @@
         <img src="../../assets/images/search-white.png" alt="Search" class="search-icon" />
       </div>
       <div class="search-result" :class="searchResult.length > 0 ? 'show' : ''">
-        <div
-          v-for="joke in searchResult"
-          :key="joke.id"
-          class="list-item"
-          @click="showJokeDetailPage(joke.id)"
-        >
-          <p v-if="joke.categories.length > 0">{{ joke.categories.join(', ') }} Jokes: Joke Title</p>
-          <p v-else>UnCategorized Jokes: Joke Title</p>
+        <div class="search-result-list">
+          <div
+            v-for="joke in searchResult"
+            :key="joke.id"
+            class="list-item"
+            @click="showJokeDetailPage(joke.id)"
+          >
+            <img src='../../assets/images/green-light.png' alt="Light Img">
+            <p v-if="joke.categories.length > 0">{{ joke.categories.join(', ') }} Jokes: Joke Title</p>
+            <p v-else>UnCategorized Jokes: Joke Title</p>
+          </div>
         </div>
+
       </div>
     </div>
   </div>

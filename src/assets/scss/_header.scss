@@ -338,20 +338,24 @@
       width: 100%;
       background-color: $white-two;
       border: solid 1px #dbdbdb;
+      border-radius: 2px;
       box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.28);
       padding: 5px 16px;
       display: none;
       z-index: 10;
 
-      &::-webkit-scrollbar {
-        display: none;
+      .search-result-list {
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
 
       &.show {
         display: flex;
         flex-direction: column;
         max-height: 300px;
-        overflow: auto;
       }
 
       &::before {
@@ -361,7 +365,7 @@
         height: 12px;
         background-color: $white-two;
         transform: rotate(45deg);
-        left: 20px;
+        left: 14px;
         top: -7px;
         border-top: solid 1px $light-grey;
         border-left: solid 1px $light-grey;
@@ -378,8 +382,14 @@
         border-bottom: solid 1px #d1d1d1;
         text-decoration: none;
 
+        img {
+          margin-right: 5px;
+        }
+
         p {
           margin: 0;
+          display: inline-block;
+          text-transform: capitalize;
         }
 
         &:last-child {
