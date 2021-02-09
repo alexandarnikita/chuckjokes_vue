@@ -51,6 +51,22 @@
               <span>65</span>
             </div>
           </div>
+          <div class="pagination-group">
+            <button
+              class="prev-button"
+              @click="prevJoke(joke.id)"
+            >
+              <img src="../../assets/images/back.png" alt="Prev Icon" />
+              Prev Joke
+            </button>
+            <button
+              class="next-button"
+              @click="nextJoke(joke.id)"
+            >
+              Next Joke
+              <img src="../../assets/images/next.png" alt="Next Icon" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -74,7 +90,7 @@ export default {
   },
   methods: {
     goBack() {
-      this.$router.go(-1)
+      this.$router.push('/home')
     },
     getCategoryColor (categoryName) {
       const category = this.$store.state.categories.find((jc) => jc.name === categoryName)
@@ -91,6 +107,19 @@ export default {
         return { value: 'hall of fame', class: 'chestnut' }
       }
       return { value: 'hall of fame', class: 'hall-fame' }
+    },
+    gotoJoke(id, offset) {
+      const jokeList = this.$store.state.jokes
+      let index = jokeList.findIndex((joke) => joke.id === id)
+      index = (index + offset + jokeList.length) % jokeList.length
+      const nextJokeId = jokeList[index].id
+      this.$router.push('/joke/' + nextJokeId)
+    },
+    prevJoke(id) {
+      this.gotoJoke(id, -1)
+    },
+    nextJoke(id) {
+      this.gotoJoke(id, 1)
     }
   },
   data () {

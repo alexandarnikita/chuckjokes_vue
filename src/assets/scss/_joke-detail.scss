@@ -231,5 +231,71 @@
       }
     }
   }
-}
 
+  .pagination-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+
+    button {
+      width: 131px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: solid 1px $white-three;
+      background-color: $white-two;
+      outline: none;
+      font-family: $montserrat;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.43;
+      color: $brand;
+      margin-right: 8px;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &.prev-button {
+        img {
+          margin-right: 8px;
+          position: relative;
+          transition: 0.5s;
+          right: 0;
+        }
+
+        &:hover {
+          img {
+            right: 8px;
+          }
+        }
+      }
+
+      &.next-button {
+        img {
+          position: relative;
+          margin-left: 8px;
+          transition: 0.5s;
+          left: 0;
+        }
+
+        &:hover {
+          img {
+            left: 8px;
+          }
+        }
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+
+      img {
+        width: 9px;
+      }
+    }
+  }
+}
