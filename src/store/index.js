@@ -11,10 +11,7 @@ const state = {
   userInfo: null,
   categories: ['a', 'b'],
   jokes: [],
-  selectedCategory: {
-    name: 'View All',
-    color: '#FFFFFF'
-  },
+  selectedCategory: {},
   pagination: {
     currentPageIndex: 1,
     perPage: 6

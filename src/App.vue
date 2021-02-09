@@ -7,7 +7,10 @@
 <script>
 export default {
   name: 'App',
-
+  async mounted () {
+    await this.$getCategories()
+    await this.$getJokes({query: 'all'})
+  },
   created () {
   }
 }

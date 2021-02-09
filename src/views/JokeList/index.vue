@@ -100,8 +100,6 @@ export default {
   props: {},
   computed: {},
   async mounted () {
-    await this.$getCategories()
-    await this.$getJokes({query: 'all'})
     this.$setSelectedCategory(ALL_CATEGORIES)
   },
   methods: {
