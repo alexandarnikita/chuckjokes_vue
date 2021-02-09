@@ -9,7 +9,7 @@ Vue.use(Vuex)
 
 const state = {
   userInfo: null,
-  categories: ['a', 'b'],
+  categories: [],
   jokes: [],
   selectedCategory: {},
   pagination: {
